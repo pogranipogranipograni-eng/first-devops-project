@@ -19,6 +19,6 @@
 
 
 4. Specjalizacja
-   * SRE - Site Reliablility Engineer -> skalowanie, stabilność systemow, monitorowanie i automatyzacja.  
-   * Cloud Architect -> projektownie i wdrażanie infrastruktury chmurowej. 
-   * CI/CD Engineer -> dba i automatyzuje proces od zakomitowania zmiany przez developera do momentu kiedy ta ziana wchodzi na produkcję. 
+   * SRE - Site Reliablility Engineer -> skalowanie, stabilność systemow, monitorowanie i automatyzacja.
+   * Cloud Architect -> projektownie i wdrażanie infrastruktury chmurowej.
+   * CI/CD Engineer -> dba i automatyzuje proces od zakomitowania zmiany przez developera do momentu kiedy ta ziana wchodzi na produkcje.
