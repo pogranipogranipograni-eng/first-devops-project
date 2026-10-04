@@ -3,7 +3,7 @@
 tools=("git" "curl" "wget" "unzip" "htop" "tree" "jq" "docker" "dupa" )
 
 echo "=========================================="
-echo " Start instalation: ${programs[@]}"
+echo " Rozpoczynam sprawdzanie i instalację"
 echo "=========================================="
 
 for tool in "${tools[@]}"; do
@@ -11,6 +11,13 @@ for tool in "${tools[@]}"; do
 	if command -v "$tool" 1>/dev/null 2>&1; then
 		echo "[OK - Już zainstalowane]"
 	else
-		echo $?
+		echo "[BRAK] -> Rozpoczynam instalację..."
+		sudo apt-get update -qq && sudo apt-get install -y "$tool" >/dev/null 2>&1 || true
+		if command -v "$tool" &> /dev/null; then
+              	         echo "-> Sukces: $tool został poprawnie zainstalowany."
+        	else
+            		echo "-> Błąd: Nie udało się zainstalować $tool."
+           	        failed_tools+=("$tool")
+       	 	fi
 	fi
 done
