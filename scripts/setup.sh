@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tools=("git" "curl" "wget" "unzip" "htop" "tree" "jq" "docker" "dupa" )
+tools=("git" "curl" "wget" "unzip" "htop" "tree" "jq")
+failed_tools=()
 
 echo "=========================================="
 echo " Rozpoczynam sprawdzanie i instalację"
@@ -21,3 +22,11 @@ for tool in "${tools[@]}"; do
        	 	fi
 	fi
 done
+
+echo "Proces zakończony."
+if [ ${#failed_tools[@]} -gt 0 ]; then
+    echo "⚠ Uwaga: Następujące narzędzia nie mogły zostać zainstalowane: ${failed_tools[@]}"
+    exit 1
+else
+    echo "Wszystkie narzędzia są gotowe do pracy!"
+fi
