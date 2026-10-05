@@ -4,29 +4,29 @@ tools=("git" "curl" "wget" "unzip" "htop" "tree" "jq")
 failed_tools=()
 
 echo "=========================================="
-echo " Rozpoczynam sprawdzanie i instalację"
+echo " Starting checking and installation"
 echo "=========================================="
 
 for tool in "${tools[@]}"; do
-	echo -n "Sprawdzam narzędzie: $tool ... "
+	echo -n "Checking tool: $tool ... "
 	if command -v "$tool" 1>/dev/null 2>&1; then
-		echo "[OK - Już zainstalowane]"
+		echo "[OK - Already installed]"
 	else
-		echo "[BRAK] -> Rozpoczynam instalację..."
+		echo "[MISSING] -> Starting installation..."
 		sudo apt-get update -qq && sudo apt-get install -y "$tool" >/dev/null 2>&1 || true
 		if command -v "$tool" &> /dev/null; then
-              	         echo "-> Sukces: $tool został poprawnie zainstalowany."
+              	         echo "-> Success: $tool has been successfully installed."
         	else
-            		echo "-> Błąd: Nie udało się zainstalować $tool."
+            		echo "-> Error: Failed to install $tool."
            	        failed_tools+=("$tool")
        	 	fi
 	fi
 done
 
-echo "Proces zakończony."
+echo "Process completed."
 if [ ${#failed_tools[@]} -gt 0 ]; then
-    echo "⚠ Uwaga: Następujące narzędzia nie mogły zostać zainstalowane: ${failed_tools[@]}"
+    echo "⚠ Warning: The following tools could not be installed: ${failed_tools[@]}"
     exit 1
 else
-    echo "Wszystkie narzędzia są gotowe do pracy!"
+    echo "All tools are ready to work!"
 fi
