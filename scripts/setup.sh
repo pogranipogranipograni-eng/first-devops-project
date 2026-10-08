@@ -13,7 +13,7 @@ for tool in "${tools[@]}"; do
 		echo "[OK - Already installed]"
 	else
 		echo "[MISSING] -> Starting installation..."
-		sudo apt-get update -qq && sudo apt-get install -y "$tool" >/dev/null 2>&1 || true
+		sudo apt-get update && sudo apt-get install -y "$tool" >/dev/null 2>&1 || true
 		if command -v "$tool" &> /dev/null; then
               	         echo "-> Success: $tool has been successfully installed."
         	else
@@ -29,4 +29,14 @@ if [ ${#failed_tools[@]} -gt 0 ]; then
     exit 1
 else
     echo "All tools are ready to work!"
+fi
+
+echo "=========================================="
+echo " Running external configuration..."
+echo "=========================================="
+
+if [ -f "./git-config.sh" ]; then
+    bash ./git-config.sh
+else
+    echo " Warning: git-config.sh not found in current directory!"
 fi
