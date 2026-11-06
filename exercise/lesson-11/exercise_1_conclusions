@@ -1,0 +1,6 @@
+| Sposób uruchomienia | Czy tworzy nową podpowłokę? | Czy `$${BASHPID}` (PID powłoki wykonującej) się różni? | Czy zmienne środowiskowe/zmiany wracają do rodzica? |
+| :--- | :---: | :---: | :---: |
+| **`./skrypt.sh`** | **Tak** (nowy proces) | **Różni się** (wewnątrz skryptu jest inny PID niż w wywołującym terminalu) | **Nie** (znikają po zakończeniu skryptu) |
+| **`bash skrypt.sh`** | **Tak** (nowy proces basha) | **Różni się** (wewnątrz skryptu jest inny PID niż w wywołującym terminalu) | **Nie** (znikają po zakończeniu skryptu) |
+| **`source skrypt.sh`** (lub `. skrypt.sh`) | **Nie** (ten sam proces) | **To samo** (ten sam PID co w wywołującym terminalu) | **Tak** (zostają w bieżącej sesji terminala) |
+| **Komenda z `PATH`** (np. `skrypt.sh`) | **Tak** (nowy proces) | **Różni się** (wewnątrz skryptu jest inny PID niż w wywołującym terminalu) | **Nie** (znikają po zakończeniu skryptu) |
