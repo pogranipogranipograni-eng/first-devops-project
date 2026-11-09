@@ -1,5 +1,5 @@
 #!/bin/bash
 
-zmienna='third test'
+name='third test'
 
-echo "$zmienna"
+echo "$name"

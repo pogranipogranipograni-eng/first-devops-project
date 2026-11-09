@@ -3,6 +3,3 @@
 name='fourt test'
 
 echo "$name"
-
-
-
