@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo 'first test'
+name='first test'
+
+echo "$name"
