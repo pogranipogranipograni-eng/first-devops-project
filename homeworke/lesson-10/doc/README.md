@@ -16,4 +16,3 @@
    10. Make final adjustments
 
 \* Note: For the branch name, I used the lesson number from the textbook for this specific task.
-
