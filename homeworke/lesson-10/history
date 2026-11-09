@@ -1,13 +1,12 @@
-git log --oneline# jedna linia na commit
-git log --graph --oneline --decorate# z rysunkiem gałęzi
-git log -3# trzy ostatnie
-git log --since="2 weeks ago"# zakres czasu
-git log --author="Kowalski"# po autorze
-git log -p plik.txt# historia jednego pliku z różnicami
-git log --stat# statystyka zmienionych plików
-git log --grep="fix"# po treści komunikatu
-git log -S "nazwa_funkcji"# commity, które dodały lub usunęły ten
-tekst
-git show 7b1d4e2# szczegóły jednego commitu
-git show 7b1d4e2 --no-patch# tylko metadane
-git show 7b1d4e2 -- plik.txt# tylko zmiany w jednym pliku
+git log --oneline                          # one line per commit
+git log --graph --oneline --decorate       # show branch graph
+git log -3                                 # last three commits
+git log --since="2 weeks ago"              # time range
+git log --author="Kowalski"                # filter by author
+git log -p file.txt                        # history of a single file with diffs
+git log --stat                             # summary stats of changed files
+git log --grep="fix"                       # search commit messages
+git log -S "function_name"                 # search commits adding/removing this text
+git show 7b1d4e2                           # details of a single commit
+git show 7b1d4e2 --no-patch                # show metadata only
+git show 7b1d4e2 -- file.txt               # show changes in a specific file only
