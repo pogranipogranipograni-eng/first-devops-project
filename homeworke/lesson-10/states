@@ -1,0 +1,4 @@
+untracked — plik istnieje na dysku, Git nigdy go nie widział;
+modified — plik jest śledzony i różni się od wersji w ostatnim commicie;
+staged — zmiana została skopiowana do poczekalni i czeka na commit;
+unmodified — plik na dysku jest identyczny z wersją w HEAD .
