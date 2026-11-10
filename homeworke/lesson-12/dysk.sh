@@ -2,11 +2,31 @@
 
 file_system_types=("ext4" "ext3" "ext2" "btrfs" "xfs" "ntfs" "ntfs3" "exfat")
 
+usage() {
+    cat <<EOF
+Usage:
+    ${0##*/} [-a] [-h] [PERCENT]
+
+Options:
+    -a        print every filesystem; rows at or above the threshold are red
+    -h        show this help
+    PERCENT   usage threshold from 0 to 100 (default: 85)
+
+Exit codes:
+    0  every checked filesystem is below the threshold
+    1  at least one filesystem is at or above the threshold
+EOF
+}
+
 show_all=0
-if [[ "$1" == "-a" ]]; then
+while [[ "${1:-}" == "-a" || "${1:-}" == "-h" ]]; do
+    if [[ "$1" == "-h" ]]; then
+        usage
+        exit 0
+    fi
     show_all=1
     shift
-fi
+done
 percentage_threshold="${1:-85}"
 
 df -h -T | awk -v threshold="$percentage_threshold" -v show_all="${show_all}" -v types="${file_system_types[*]}" '
