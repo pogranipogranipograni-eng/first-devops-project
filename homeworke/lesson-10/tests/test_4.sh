@@ -1,5 +1,5 @@
 #!/bin/bash
 
-name='fourt test'
+name='fourth test'
 
 echo "$name"
