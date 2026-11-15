@@ -1,0 +1,6 @@
+git config --global alias.st status
+git config --global alias.lg "log --oneline --graph --decorate --all"
+git config --global alias.last "log -1 HEAD --stat"
+git config --global alias.unstage "restore --staged"
+git config --global core.autocrlf input
+git config --global rerere.enabled true

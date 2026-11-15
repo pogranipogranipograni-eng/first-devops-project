@@ -1,0 +1,22 @@
+Type	Purpose	SemVer impact
+feat	a new feature	MINOR
+fix	a bug fix	PATCH
+docs	documentation only changes (README, comments)	none
+style	formatting, whitespace, semicolons (no change in behavior)	none
+refactor	code restructuring without changing behavior and without fixing a bug	none
+perf	a performance improvement	usually PATCH
+test	adding or fixing tests	none
+build	build system or dependencies (npm, Maven, Dockerfile)	none
+ci	CI/CD configuration (GitHub Actions, Jenkinsfile)	none
+chore	maintenance tasks that don’t fit elsewhere (e.g. updating .gitignore)	none
+revert	reverting a previous commit	depends
+
+Examples
+
+feat: add login endpoint
+fix(validation): fix email check
+docs: update README with run instructions
+chore: add node_modules to .gitignore
+ci: add GitHub Actions workflow with tests
+test(auth): add test for wrong password
+refactor: extract argument parsing function

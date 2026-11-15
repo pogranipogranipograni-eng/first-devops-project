@@ -1,0 +1,4 @@
+untracked   — file exists on disk, Git has never tracked it;
+modified    — file is tracked and differs from the version in the last commit;
+staged      — change has been added to the staging area and is waiting to be committed;
+unmodified  — file on disk is identical to the version in HEAD.
